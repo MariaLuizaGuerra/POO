@@ -1,4 +1,4 @@
-package petShop;
+package ex02_petShop;
 
 public class Cachorro {
 

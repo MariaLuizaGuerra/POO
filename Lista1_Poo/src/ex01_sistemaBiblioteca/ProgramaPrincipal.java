@@ -1,4 +1,4 @@
-package sistemaBibliote;
+package ex01_sistemaBiblioteca;
 
 public class ProgramaPrincipal {
 	public static void main(String[] args) {
