@@ -13,6 +13,12 @@ public class Justificativa {
 		this.dataInicio = dataInicio;
 		this.periodoDias = periodoDias;
 	}
+	
+	public void mostrarJustificativa() {
+		System.out.println("Motivo: " + descricao);
+		System.out.println("Data: " + dataInicio);
+		System.out.printf("Período: " + periodoDias);
+	}
 
 	public int getPeriodoDias() {
 		return periodoDias;
@@ -25,5 +31,7 @@ public class Justificativa {
 	public String getDescricao() {
 		return descricao;
 	}
+
+
 	
 }

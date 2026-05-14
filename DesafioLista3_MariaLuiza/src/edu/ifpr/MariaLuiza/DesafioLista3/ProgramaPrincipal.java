@@ -6,28 +6,23 @@ public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
 
-		// 1. Criar o curso "Java Avançado"
-		Curso curso = new Curso("Java Avançado");
+		Curso curso = new Curso("Java");
 
-		// 2. Criar o aluno matriculado no curso
-		Aluno aluno = new Aluno("Claude Sonnet", curso);
+		Aluno aluno = new Aluno("Maria luiza Guerra", curso, null);
 
-		// 3. Criar a secretaria responsável pelos registros
-		Secretaria secretaria = new Secretaria("Maria Oliveira");
+		Secretaria secretaria = new Secretaria("Julia Fontana");
 
-		// 4. Criar e registrar duas justificativas de faltas via Secretaria
 		Justificativa justificativa1 = new Justificativa("Consulta médica e repouso por gripe",LocalDate.of(2026, 4, 7), 3);
 		Justificativa justificativa2 = new Justificativa("Participação em congresso de tecnologia",LocalDate.of(2026, 5, 2), 2);
 
 		secretaria.RegistrarJustificativa(aluno, justificativa1);
 		secretaria.RegistrarJustificativa(aluno, justificativa2);
 
-		// 5. Exibir o relatório de faltas do aluno
-		aluno.MostrarFaltas();
+		aluno.totalJustificativas();
 	}
 
 }
 
-//- Aluno ──► Curso          : Associação (cada aluno tem um curso)
-//- Aluno ──► Justificativas : Agregação  (lista de justificativas)
-//- Secretaria ──► Aluno     : Dependência (opera sobre o aluno)
+//- Aluno -> Curso -> Associação 
+//- Aluno -> Justificativas -> Agregação  
+//- Secretaria -> Aluno -> Dependência 

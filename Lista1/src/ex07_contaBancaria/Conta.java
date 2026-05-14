@@ -10,7 +10,7 @@ public class Conta {
 	}
 	
 	public void sacar(double valor) {
-		if(saldo > valor) {
+		if(saldo >= valor) {
 			saldo -= valor;
 			System.out.println("Saque efetuado com sucesso");
 			System.out.println("Saldo atual: R$" + saldo);

@@ -1,49 +1,44 @@
 package edu.ifpr.MariaLuiza.DesafioLista3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno {
 
 	private String nome;
 	private Curso curso;
-	private List<Justificativa> justificativas;
+	private List<Justificativa> justificativa;
 
-	public Aluno(String nome, Curso curso) {
+	public Aluno(String nome, Curso curso, Justificativa justificativa) {
 		this.nome = nome;
 		this.curso = curso;
+		this.justificativa = new ArrayList<Justificativa>();
 	}
 
-	public void MostrarFaltas() {
+	public void totalJustificativas() {
 		System.out.println("RELATÓRIO DE FALTAS:");
-		System.out.printf("Aluno: " + nome);
-		System.out.printf("Curso: ", curso.getNome());
+		System.out.println("Aluno: " + nome);
+		System.out.println("Curso: " + curso.getNome());
 
 		// isEmpty() = metodo para ver ser uma lista esta vazia
-		if (justificativas.isEmpty()) {
+		if (justificativa.isEmpty()) {
 			System.out.println("Nenhuma justificativa de falta registrada.");
 		} else {
-			System.out.println("Justificativas Registradas (" + justificativas.size() + "):");
+			System.out.println("Justificativas Registradas:" + justificativa.size());
 			System.out.println();
-			for (int i = 0; i < justificativas.size(); i++) {
-				System.out.println(i + 1);
-				System.out.println(justificativas.get(i));
-				System.out.println();
-			}
-			System.out.println(" ");
-			System.out.printf("Total de dias justificados:", getTotalDiasJustificados());
 		}
 	}
 
-	public void adicionarJustificativa(Justificativa justificativa) {
-		this.justificativas.add(justificativa);
+	public int getTotalDiasJustificados() {
+		int total = 0;
+		for (int i = 0; i < justificativa.size(); i++) {
+			total += justificativa.get(i).getPeriodoDias();
+		}
+		return total;
 	}
 
-	public int getTotalDiasJustificados() {
-	    int total = 0;
-	    for (int i = 0; i < justificativas.size(); i++) {
-	        total += justificativas.get(i).getPeriodoDias();
-	    }
-	    return total;
+	public void adicionarJustificativa(Justificativa justificativa) {
+		this.justificativa.add(justificativa); // use "this.justificativas"
 	}
 
 	public String getNome() {
@@ -55,6 +50,6 @@ public class Aluno {
 	}
 
 	public List<Justificativa> getJustificativas() {
-		return justificativas;
+		return justificativa;
 	}
 }

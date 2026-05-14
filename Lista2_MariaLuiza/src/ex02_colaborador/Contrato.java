@@ -6,7 +6,6 @@ public class Contrato {
 	private float valorBeneficios;
 	
 	public Contrato(float salarioBase, float valorBeneficios) {
-		super();
 		this.salarioBase = salarioBase;
 		this.valorBeneficios = valorBeneficios;
 	}

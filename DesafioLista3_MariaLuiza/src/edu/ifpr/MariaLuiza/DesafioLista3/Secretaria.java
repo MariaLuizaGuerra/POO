@@ -8,16 +8,13 @@ public class Secretaria {
 		this.nomeResponsavel = nomeResponsavel;
 	}
 
+
 	public void RegistrarJustificativa(Aluno aluno, Justificativa justificativa) {
 		aluno.adicionarJustificativa(justificativa);
 		System.out.println("Justificativa registrada com sucesso!");
-		System.out.println("Responsável: " + nomeResponsavel);
 		System.out.println("Aluno: " + aluno.getNome());
-		System.out.println("Motivo: " + justificativa.getDescricao());
-		System.out.printf("Período: " + justificativa.getPeriodoDias() + justificativa.getDataInicio());
-	}
-
-	public String getNomeResponsavel() {
-		return nomeResponsavel;
+		System.out.println("Responsável: " + nomeResponsavel);
+		justificativa.mostrarJustificativa();
+		System.out.println("-------");
 	}
 }
